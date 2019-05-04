@@ -7,6 +7,8 @@ package co.edu.konrad.zoologicok.DTO;
 
 import co.edu.konrad.zoologicok.entity.LugarEntity;
 import co.edu.konrad.zoologicok.entity.ProgramacionEntity;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author julian
@@ -77,4 +79,12 @@ public class ProgramacionDTO {
     public void setLugar(LugarEntity lugar) {
         this.lugar = lugar;
     }
+    public static List<ProgramacionDTO> toProgramacionList(List<ProgramacionEntity> entities){
+        List<ProgramacionDTO> programaciones = new ArrayList<>();
+        for(ProgramacionEntity entity : entities){
+            programaciones.add(new ProgramacionDTO(entity));
+        }
+        return programaciones;
+    }
+    
 }

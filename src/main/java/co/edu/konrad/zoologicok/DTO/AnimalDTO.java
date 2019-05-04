@@ -10,6 +10,8 @@ import co.edu.konrad.zoologicok.entity.CalificacionEntity;
 import co.edu.konrad.zoologicok.entity.CuidadorEntity;
 import co.edu.konrad.zoologicok.entity.HorariosAlimentacionEntity;
 import co.edu.konrad.zoologicok.entity.TipoAnimalEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -92,5 +94,13 @@ public class AnimalDTO {
 
     public void setHoraAlimentacion(HorariosAlimentacionEntity horaAlimentacion) {
         this.horaAlimentacion = horaAlimentacion;
+    }
+    
+    public static List<AnimalDTO> toAnimalList(List<AnimalEntity> entities){
+        List<AnimalDTO> animal = new ArrayList<>();
+        for(AnimalEntity entity : entities){
+            animal.add(new AnimalDTO(entity));
+        }
+        return animal;
     }
 }

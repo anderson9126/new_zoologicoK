@@ -6,6 +6,8 @@
 package co.edu.konrad.zoologicok.DTO;
 
 import co.edu.konrad.zoologicok.entity.TipoAnimalEntity;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -57,6 +59,12 @@ public class TipoAnimalDTO {
         this.nombreCategoria = nombreCategoria;
     }
     
-    
+    public static List<TipoAnimalDTO> toTipoAnimalList(List<TipoAnimalEntity> entities){
+        List<TipoAnimalDTO> tipoAnimal = new ArrayList<>();
+        for(TipoAnimalEntity entity : entities){
+            tipoAnimal.add(new TipoAnimalDTO(entity));
+        }
+        return tipoAnimal;
+    }
     
 }
