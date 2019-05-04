@@ -6,6 +6,8 @@
 package co.edu.konrad.zoologicok.DTO;
 
 import co.edu.konrad.zoologicok.entity.LugarEntity;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author julian
@@ -44,4 +46,12 @@ public class LugarDTO {
     public void setNombreLugar(String nombreLugar) {
         this.nombreLugar = nombreLugar;
     }
+    public static List<LugarDTO> toLugarList(List<LugarEntity> entities){
+        List<LugarDTO> lugares = new ArrayList<>();
+        for(LugarEntity entity : entities){
+            lugares.add(new LugarDTO(entity));
+        }
+        return lugares;
+    }
+    
 }

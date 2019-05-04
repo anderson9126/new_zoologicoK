@@ -17,6 +17,7 @@ import javax.ws.rs.core.Application;
 @ApplicationPath("/api")
 public class ApplicationConfig extends Application{
     
+    @Override
     public Set<Class<?>> getClasses(){
         Set<Class<?>> resources = new HashSet<>();
         addRestResourceClasses(resources);
@@ -24,5 +25,11 @@ public class ApplicationConfig extends Application{
     }
     
     private void addRestResourceClasses(Set<Class<?>> resources){
+        resources.add(co.edu.konrad.zoologicok.resources.AnimalResource.class);
+        resources.add(co.edu.konrad.zoologicok.resources.CuidadorResource.class);
+        resources.add(co.edu.konrad.zoologicok.resources.LugarResource.class);
+        resources.add(co.edu.konrad.zoologicok.resources.ProgramacionResource.class);
+        resources.add(co.edu.konrad.zoologicok.resources.ShowResource.class);
+        resources.add(co.edu.konrad.zoologicok.resources.TipoAnimalResource.class);
     }
 }

@@ -10,6 +10,8 @@ import co.edu.konrad.zoologicok.entity.CalificacionEntity;
 import co.edu.konrad.zoologicok.entity.EncargadoEntity;
 import co.edu.konrad.zoologicok.entity.ProgramacionEntity;
 import co.edu.konrad.zoologicok.entity.ShowEntity;
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author julian
@@ -91,4 +93,12 @@ public class ShowDTO {
     public void setProgramacion(ProgramacionEntity programacion) {
         this.programacion = programacion;
     }
+    public static List<ShowDTO> toShowList(List<ShowEntity> entities){
+        List<ShowDTO> shows = new ArrayList<>();
+        for(ShowEntity entity : entities){
+            shows.add(new ShowDTO(entity));
+        }
+        return shows;
+    }
+    
 }
