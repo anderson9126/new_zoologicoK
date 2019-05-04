@@ -6,7 +6,9 @@
 package co.edu.konrad.zoologicok.DTO;
 
 import co.edu.konrad.zoologicok.entity.CuidadorEntity;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -80,6 +82,12 @@ public class CuidadorDTO {
         this.numeroCelular = numeroCelular;
     }
     
-    
+    public static List<CuidadorDTO> toCuidadorList(List<CuidadorEntity> entities){
+        List<CuidadorDTO> cuidador = new ArrayList<>();
+        for(CuidadorEntity entity : entities){
+            cuidador.add(new CuidadorDTO(entity));
+        }
+        return cuidador;
+    }
     
 }
