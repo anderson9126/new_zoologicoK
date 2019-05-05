@@ -39,7 +39,7 @@ public class CalificacionLogic {
         return entity;
     }
 
-    public CalificacionEntity actualizarCalificacionEntity(CalificacionEntity entity) {
+    public CalificacionEntity actualizarCalificacionEntity(CalificacionEntity entity, long id) {
         CalificacionEntity calificacion = persistence.update(entity);
         return calificacion;
     }
